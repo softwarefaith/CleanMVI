@@ -19,9 +19,12 @@ public protocol Interactor {
     associatedtype Interaction = (ViewType, Box<IntentType?>) -> Void
     var interactor: Box<IntentType?> { get set}
 }
+public protocol CanInit {
+    init()
+}
 public protocol PresenterLink {
     associatedtype Link: ViewStateIntentLink
-    associatedtype View: Controller
+    associatedtype View
     static var action: (Link.ViewStateType?, Link.ViewStateType?, View) -> Void { get}
     static var interaction: (View, Box<Link.IntentType?>) -> Void { get}
 }
