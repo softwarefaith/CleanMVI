@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DA07925C2232F23F006A0E66 /* ItemCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07925B2232F23F006A0E66 /* ItemCoordinator.swift */; };
 		DA07925E2232F2BD006A0E66 /* SectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07925D2232F2BD006A0E66 /* SectionModel.swift */; };
 		DA0792602232F3AD006A0E66 /* ItemCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA07925F2232F3AD006A0E66 /* ItemCoordinatorTests.swift */; };
 		DA0792622234510A006A0E66 /* ItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0792612234510A006A0E66 /* ItemPresenter.swift */; };
@@ -43,7 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DA07925B2232F23F006A0E66 /* ItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCoordinator.swift; sourceTree = "<group>"; };
 		DA07925D2232F2BD006A0E66 /* SectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionModel.swift; sourceTree = "<group>"; };
 		DA07925F2232F3AD006A0E66 /* ItemCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCoordinatorTests.swift; sourceTree = "<group>"; };
 		DA0792612234510A006A0E66 /* ItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPresenter.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				DA07926322345139006A0E66 /* PresenterProtocols.swift */,
 				DAF3AA282227B2CD00FFF4E5 /* Result.swift */,
 				DAF3AA242227B2CD00FFF4E5 /* SceneCoordinator.swift */,
-				DA07925B2232F23F006A0E66 /* ItemCoordinator.swift */,
 				DAF3AA252227B2CD00FFF4E5 /* Service.swift */,
 				DAF3AA222227B2CD00FFF4E5 /* ViewModel.swift */,
 				DAF3AA232227B2CD00FFF4E5 /* ViewState.swift */,
@@ -267,7 +264,6 @@
 				DA0792622234510A006A0E66 /* ItemPresenter.swift in Sources */,
 				DAF3AA3E2227B2CD00FFF4E5 /* Presenter.swift in Sources */,
 				DAF3AA3D2227B2CD00FFF4E5 /* Presentation.swift in Sources */,
-				DA07925C2232F23F006A0E66 /* ItemCoordinator.swift in Sources */,
 				DA0CB23F2229C004009C23FB /* MappedProperty.swift in Sources */,
 				DAF3AA382227B2CD00FFF4E5 /* Service.swift in Sources */,
 				DAF3AA322227B2CD00FFF4E5 /* CommonStates.swift in Sources */,

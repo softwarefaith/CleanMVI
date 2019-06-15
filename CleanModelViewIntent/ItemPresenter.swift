@@ -16,11 +16,10 @@ public class ItemPresenter<Link: ItemPresenterLink>: ActionPresenter, Interactor
     var viewStateAction: ViewStateAction!
     var interaction: Interaction?
     var itemListener: ItemListenerType!
-    public init(item: Link.View) {
+    public init(item: Link.View?) {
         self.viewStateAction = Link.action
         self.interaction = Link.interaction
         self.item = item
-        self.item.presenter = self
         self.bindUIActions()
     }
     private func bindUIActions() {
@@ -37,7 +36,7 @@ public class ItemPresenter<Link: ItemPresenterLink>: ActionPresenter, Interactor
         interactor.bindListener { intent, _ in
             guard let intent = intent else { return }
             viewModel.intent.accept(intent as? VM.IntentType)
-            listener.childInteractor.accept(intent as? Listener.ChildIntentType)
+            listener.childInteractor.accept(intent)
         }
         
     }

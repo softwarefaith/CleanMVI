@@ -29,7 +29,7 @@ public protocol PresenterLink {
     static var interaction: (View, Box<Link.IntentType?>) -> Void { get}
 }
 public protocol ItemPresenterLink {
-    associatedtype View: Item
+    associatedtype View
     associatedtype Link: ViewStateIntentLink
     static var action: (Link.ViewStateType?, Link.ViewStateType?, View) -> Void { get}
     static var interaction: (View, Box<Link.IntentType?>) -> Void { get}
