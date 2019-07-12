@@ -14,7 +14,9 @@ public protocol Coordinator: class, CoordinatorType {
     var coordinators: [String: Coordinator] { get set}
     func pushCoordinator<C: Coordinator>(_ coordinator: C)
     func popCoordinator(_ identifier: String)
+    func provideIdentifier() -> String
     func fetch(identifier: String) -> Coordinator?
+    func controller() -> Controller
 }
 public extension Coordinator {
     public static var identifier: String { return String(describing: self)}
@@ -27,4 +29,5 @@ public extension Coordinator {
     public func fetch(identifier: String) -> Coordinator? {
         return coordinators[identifier]
     }
+    public func provideIdentifier() -> String { return Self.identifier}
 }

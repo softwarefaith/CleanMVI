@@ -31,7 +31,7 @@ open class Router<Link: RouterLink>: RouterDelegate {
         viewModel.intent.bindListener { intent, _ in
             let state = viewModel.viewState.element()
             guard let intent = intent else { return }
-            self.route(state, intent, self)
+            Link.route(state, intent, self)
         }
     }
 }

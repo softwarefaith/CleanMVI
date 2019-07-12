@@ -11,5 +11,8 @@ public protocol Service: class {
     var serviceResult: Box<Result> { get set}
 }
 public protocol MVIService: Service {
-     var serviceHandler: (ServiceIntent?, ViewState) -> Void { get set}
+//     var serviceHandler: (ServiceIntent?, ViewState) -> Void { get set}
+}
+public class NilServiceType: MVIService {
+    public var serviceResult: Box<Result> = Box(EmptyResult.notSet)
 }

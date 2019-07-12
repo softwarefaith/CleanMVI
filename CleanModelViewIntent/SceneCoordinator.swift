@@ -12,20 +12,23 @@ public protocol SceneCoordinator: Coordinator {
     associatedtype Link: ViewModelLink
     associatedtype ViewLink: PresenterLink where Link.Link == ViewLink.Link
     associatedtype RouteLink: RouterLink where Link.Link == RouteLink.Link
-    var viewModel: MVIViewModelType! { get set}
-    var presenter: Presenter<ViewLink>! { get set}
-    var router: Router<RouteLink>! { get set}
-    func controller() -> Controller
+    var parentCoordinator: Coordinator? { get set }
+    var viewModel: MVIViewModelType! { get set }
+    var presenter: Presenter<ViewLink>! { get set }
+    var router: Router<RouteLink>! { get set }
     init()
 }
 extension SceneCoordinator {
+    public var currentController: Controller {
+        return presenter!.presentation as! Controller
+    }
     public static func configure<SC: SceneCoordinator>(
-        viewModelDelegate: MVIDelegate?,
-        service: MVIService?) -> SC {
+        viewModelDelegate: SC.Link.DelegateType?,
+        service: SC.Link.ServiceType?) -> SC {
         let coordinator = SC()
         let presentation = coordinator.controller()
+        print(presentation.view().title ?? "Some title")
         let presenter = Presenter<SC.ViewLink>(presentation: presentation as! SC.ViewLink.View)
-//        let controller = presenter.presentation
         let viewModelType = ViewModel<SC.Link>(coordinator: coordinator, delegate: viewModelDelegate, service: service)
         coordinator.viewModel = viewModelType
         coordinator.presenter = presenter

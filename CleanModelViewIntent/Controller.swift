@@ -17,9 +17,15 @@ public protocol Controller: class {
     func pop(controller: Controller, animated: Bool, arrange: ControllerArrangement?)
     func set(controllers: [Controller], animated: Bool, arrange: ControllerArrangement?)
     func addChild(controller: Controller, arrange: ControllerArrangement?)
+    func view() -> UIViewController
     init()
 }
 extension UIViewController: Controller {
+    public static var identifier: String { return self.init().title ?? ""}
+    public var identifier: String { return self.title ?? ""}
+    public func view() -> UIViewController {
+        return self
+    }
     public func present(controller: Controller, animated: Bool, arrange: ControllerArrangement?) {
         guard let controller = controller as? Controller & UIViewController else { return }
         present(controller, animated: animated, completion: {

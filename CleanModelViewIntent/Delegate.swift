@@ -9,5 +9,6 @@
 import Foundation
 public protocol Delegate: class{}
 public protocol MVIDelegate: Delegate {
-    var delegateHandler: (DelegateIntent?, ViewState) -> Void { get set}
+//    var delegateHandler: (DelegateIntent?, ViewState) -> Void { get set}
 }
+public class NilDelegateType: MVIDelegate {}
