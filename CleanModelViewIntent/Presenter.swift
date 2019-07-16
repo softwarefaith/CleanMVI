@@ -37,8 +37,5 @@ public class Presenter<Link: PresenterLink>: ActionPresenter, Interactor, Presen
             viewModel.intent.accept(intent)
         }
     }
-    deinit {
-        print("deinitializing")
-    }
 }
 

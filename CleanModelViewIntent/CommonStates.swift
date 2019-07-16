@@ -27,7 +27,7 @@ public enum DisplayState: MappedProperty {
 public enum ResultState: Result {
     case notSet
     case loading
-    case error
+    case error(message: String)
     case success
 }
 public enum ErrorState {

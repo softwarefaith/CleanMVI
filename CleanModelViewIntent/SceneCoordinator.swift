@@ -27,7 +27,6 @@ extension SceneCoordinator {
         service: SC.Link.ServiceType?) -> SC {
         let coordinator = SC()
         let presentation = coordinator.controller()
-        print(presentation.view().title ?? "Some title")
         let presenter = Presenter<SC.ViewLink>(presentation: presentation as! SC.ViewLink.View)
         let viewModelType = ViewModel<SC.Link>(coordinator: coordinator, delegate: viewModelDelegate, service: service)
         coordinator.viewModel = viewModelType
